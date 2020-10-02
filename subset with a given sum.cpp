@@ -13,9 +13,9 @@ bool subset_sum(int arr[],int sum,int n)
 				t[i][j]=false;
 			if(j==0) //base condition
 				t[i][j]=true;
-			if(arr[i]<=j)
+			if(arr[i-1]<=j)
 			{
-				t[i][j]=(t[i-1][j-arr[i-1]] || t[i-1][j]);
+				t[i][j]=(t[i-1][j-arr[i-1]] )||( t[i-1][j]);
 			}
 			else
 				t[i][j]=t[i-1][j];
