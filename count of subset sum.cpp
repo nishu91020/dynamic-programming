@@ -1,3 +1,5 @@
+//problem statement:we are given an array and an integer sum we need to find out how many sub-array exist which has sum equal to the given sum.
+
 #include<bits/stdc++.h>
 using namespace std;
 
