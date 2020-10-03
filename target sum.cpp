@@ -24,12 +24,14 @@ int count_of_subset_sum(int arr[],int n,int sum)
 	}
 	return t[n][sum];
 }
-int target_sum(int arr[],int n,int sum)
+int target_sum(int arr[],int n,int tsum)
 {
 	int s=0;
 	for(int i=0;i<n;i++)
 		s+=arr[i];
-	int q=(sum+s)/2;
+	if((tsum+s)%2!=0)
+		return 0;
+	int q=(tsum+s)/2;
 	int f=count_of_subset_sum(arr,n, q);
 	return f;
 }
