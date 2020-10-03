@@ -7,14 +7,14 @@ using namespace std;
 bool subset_sum(int arr[],int sum,int n)
 {
 	bool t[n+1][sum+1];
-	for(int i=0;i<n+1;i++)
+	for(int i=0;i<=n;i++)
+		t[i][0]=true;
+	for(int i=1;i<=sum;i++)
+		t[0][i]=false;
+	for(int i=1;i<n+1;i++)
 	{
-		for(int j=0;j<sum+1;j++)
+		for(int j=1;j<sum+1;j++)
 		{
-			if(i==0) //base condition
-				t[i][j]=false;
-			if(j==0) //base condition
-				t[i][j]=true;
 			if(arr[i-1]<=j)
 			{
 				t[i][j]=(t[i-1][j-arr[i-1]] )||( t[i-1][j]);
@@ -29,16 +29,16 @@ bool subset_sum(int arr[],int sum,int n)
 int min_subset_sum_diff(int arr[],int n)
 {
 	int sum=0;
-	for(int i=0;i<=n;i++)
+	for(int i=0;i<n;i++)
 		sum+=arr[i];
 	int s=sum/2;
 	int min=INT_MAX;
-	for(int i=0;i<=s;i++)
+	for(int i=s;i>=0;i--)
 	{
-		if(subset_sum(arr,i,n))
+		if(subset_sum(arr,i,n)==true)
 		{
-			if(sum-(2*i)<min)
-				min=i;
+			min=sum-(2*i);
+			break;
 		}
 	}
 	return min;

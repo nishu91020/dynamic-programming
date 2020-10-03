@@ -7,19 +7,20 @@ bool subset_sum(int a[],int sum,int n)
 {
 	bool t[n+1][sum+1];
 	memset(t,false,sizeof(t));
-	for(int i=0;i<n+1;i++)
+	for(int i=0;i<=n;i++)
+		t[i][0]=true;
+	for(int i=0;i<=n;i++)
+		t[0][i]=false;
+	for(int i=1;i<n+1;i++)
 	{
-		for(int j=0;j<sum+1;j++)
+		for(int j=1;j<sum+1;j++)
 		{
-			if(i==0) //base condition
-				t[i][j]=false;
-			if(j==0) //base condition
-				t[i][j]=true;
+
 			if(a[i-1]<=j)
 			{
 				t[i][j]=(t[i-1][j-a[i-1]] || t[i-1][j]);
 			}
-			else
+			if(a[i]>j)
 				t[i][j]=t[i-1][j];
 		}
 	}
