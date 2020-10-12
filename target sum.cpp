@@ -3,53 +3,57 @@
 
 #include<bits/stdc++.h>
 using namespace std;
-int count_of_subset_sum(int arr[],int n,int sum)
+int number_of_subset_sum(int arr[],int n,int sum)
 {
 	int t[n+1][sum+1];
-	memset(t,0,sizeof(t));
-	for(int i=0;i<=n;i++)
-		t[0][i]=1;
-	for(int i=1;i<=sum;i++)
-		t[i][0]=0;
-	for(int i=1;i<n+1;i++)
+	for(int i=0;i<=sum;i++)
 	{
-		for(int j=1;j<sum+1;j++)
+		t[0][i]=0;
+	}
+	for(int i=0;i<=n;i++)
+	{
+		t[i][0]=1;
+	}
+
+	for(int i=1;i<=n;i++)
+	{
+		for(int j=1;j<=sum;j++)
 		{
-			if(arr[i-1]<=j)
+			if(j>=arr[i-1])
+			{
 				t[i][j]=t[i-1][j-arr[i-1]]+t[i-1][j];
-			if(arr[i-1]>j)
+			}
+			else
 				t[i][j]=t[i-1][j];
-				
 		}
 	}
 	return t[n][sum];
 }
 int target_sum(int arr[],int n,int tsum)
 {
-	int s=0;
-	for(int i=0;i<n;i++)
-		s+=arr[i];
-	if((tsum+s)%2!=0)
-		return 0;
-	int q=(tsum+s)/2;
-	int f=count_of_subset_sum(arr,n, q);
-	return f;
-}
-int main()
-{
-	int n;
-	cout<<"enter no. of elements you want to create array"<<"\n";
-	cin>>n;
-	int a[n];
-	cout<<"enter elements of array"<<"\n";
+	int sum=0;
 	for(int i=0;i<n;i++)
 	{
-		cin>>a[i];
+		sum+=arr[i];
 	}
-	int sum;
-	cout<<"enter the sum"<<"\n";
-	cin>>sum;
-	int x=target_sum(a,n,sum);
-	cout<<"no. of ways to get the target sum="<<x<<"\n";
-	
+	if((sum+tsum)%2!=0)
+		return 0;
+	int s=(sum+tsum)/2;
+	return number_of_subset_sum(arr,n,s);
+}
+
+int main(){
+	int n;
+	cout<<"enter the number of elements in array"<<"\n";
+	cin>>n;
+	int arr[n];
+	cout<<"enter array elements"<<"\n";
+	for(int i=0;i<n;i++)
+		cin>>arr[i];
+	int diff;
+	cout<<"enter the desired difference b/w two subsets"<<"\n";
+	cin>>diff;
+	int ans=target_sum(arr,n,diff);
+	cout<<"no. of subsets with a given target sum ="<<" "<<ans<<"\n";
+	return 0;
 }
