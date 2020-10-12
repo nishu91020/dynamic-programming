@@ -7,3 +7,4 @@ This repository contains standard DP problems
 4)minimum subset sum difference.<br/>
 5)target sum problem.<br/>
 6)no. of subset with a given difference.<br/>
+<h5>unbounded knapsack{All the elements are infinite in number}</h5>
