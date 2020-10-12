@@ -1,4 +1,4 @@
-//problem statment:we need to divide an array into two subset such that their sum is equal or
+//problem statment:we need to find if there is a way to divide an array into two subset such that their sum is equal or
 //sum(subset1)-sum(subset2)=0
 
 # include<bits/stdc++.h>
