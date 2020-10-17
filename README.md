@@ -8,9 +8,12 @@ This repository contains standard DP problems
 5)target sum problem.<br/>
 6)no. of subset with a given difference.<br/>
 <h5>unbounded knapsack{All the elements are infinite in number}</h5>
-1)Rod ccutting problem<br/>
+1)Rod cutting problem<br/>
 2)Coin change problem:maximum number of ways<br/>
 3)Coin change problem:Minimum number of coins<br/>
 4)Longest common subsequence<br/>
 5)Longest common substring<br/>
 6)Printing longest common subsequence<br/>
+7)Shortest common supersequence<br/>
+8)number of insertion and deletion to convert string a into b.<br/>
+9)Longest palindromic subsequence.<br/>
