@@ -2,7 +2,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int max_coin(int amt,int n,int arr[])
+int max_ways(int amt,int n,int arr[])
 {
 	int t[n+1][amt+1];
 
@@ -41,7 +41,7 @@ int main()
 	{
 		cin>>arr[i];
 	}
-	int x=max_coin(amount,n,arr);
+	int x=max_ways(amount,n,arr);
 	cout<<"max. no. of coins that can be used to get desired amount= "<<x<<"\n";
 	return 0;
 }
