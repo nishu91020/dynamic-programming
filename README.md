@@ -17,3 +17,7 @@ This repository contains standard DP problems
 7)Shortest common supersequence<br/>
 8)number of insertion and deletion to convert string a into b.<br/>
 9)Longest palindromic subsequence.<br/>
+10)mminimum number of deletion to make a string palindromic<br/>
+11)Print shortest common supersequence.<br/>
+12)Longest repeating subsequence.<br/>
+13)subsequence pattern matching.<br/>
