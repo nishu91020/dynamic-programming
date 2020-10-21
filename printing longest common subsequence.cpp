@@ -44,13 +44,14 @@ void longest_common_subsequence(string a,string b,int m,int n)
 					j--;
 
 	}
-	cout<<"LCS Of"<<a <<" and "<< b<<" is "<<s<<"\n";
+	cout<<"LCS Of "<<a <<" and "<< b<<" is "<<s<<"\n";
 }
 int main()
 {
 	string a,b;
 	cout<<"Enter string a and b"<<"\n";
 	cin>>a>>b;
+	longest_common_subsequence(a,b,a.length(),b.length());
 	/*string x=longest_common_subsequence(a,b,a.length(),b.length());
 	cout<<"length of longest common subsequence "<<x<<"\n";	*/
 	return 0;
