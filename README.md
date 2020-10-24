@@ -22,6 +22,5 @@ This repository contains standard DP problems
 12)Longest repeating subsequence.<br/>
 13)subsequence pattern matching.<br/>
 14)Minimum number of insertions in a string to make it palindrome.<br/>
-15)Matrix chain multiplication bottom-up.<br/>
-16)Matrix chain multiplication recursive.<br/>
+<h5>Matrix chain multiplication.</h5>
 17)Palindrome partitioning.<br/>
